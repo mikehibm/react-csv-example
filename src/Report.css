@@ -1,0 +1,45 @@
+.Report {
+  padding: 1em;
+  text-align: left;
+  font-size: 82%;
+}
+
+.Report h1,
+.Report h2,
+.Report h3,
+.Report h4 {
+  text-align: center;
+}
+
+.Report table {
+  width: 94%;
+  margin: auto;
+}
+
+.Report thead th {
+  border-bottom: solid 1px #888;
+}
+
+.Report th,
+.Report td {
+  padding: 0.2em 0.4em;
+}
+
+.Report td.description {
+  min-width: 400px;
+  max-width: 600px;
+}
+
+.Report .project {
+  font-size: 70%;
+  color: #888;
+}
+
+.Report .start_time {
+  font-size: 84%;
+  color: #444;
+}
+
+.Report .number {
+  text-align: right;
+}

@@ -1,19 +1,35 @@
 import * as React from 'react';
 import './App.css';
-
-import logo from './logo.svg';
+import { FileSelect } from './FileSelect';
+import { Report } from './Report';
+import { readFileAsText, mapCSVToArray } from './helpers';
+import { mapArrayToWorkItem } from './WorkItem';
 
 class App extends React.Component {
-  public render() {
-    console.log('hogehoge');
+  state = { screen: 'home', items: [] };
 
+  handleSubmit = async (file: Blob) => {
+    try {
+      const csv = await readFileAsText(file);
+      const arr = mapCSVToArray(csv);
+      const items = mapArrayToWorkItem(arr);
+      this.setState({ screen: 'report', items });
+    } catch (error) {
+      alert(error);
+    }
+  };
+
+  public render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">ようこそ!</h1>
+          <h1 className="App-title">Work Report</h1>
         </header>
-        <p className="App-intro">サンプルアプリケーションです。</p>
+        {this.state.screen === 'home' ? (
+          <FileSelect onSubmit={this.handleSubmit} />
+        ) : (
+          <Report items={this.state.items} />
+        )}
       </div>
     );
   }
