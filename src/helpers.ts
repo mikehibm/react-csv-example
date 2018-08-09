@@ -1,4 +1,4 @@
-async function readFileAsText(file: Blob): Promise<string> {
+function readFileAsText(file: Blob): Promise<string> {
   return new Promise<string>((resolve, reject) => {
     const reader = new FileReader();
     reader.onerror = () => reject(reader.error);
