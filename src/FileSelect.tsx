@@ -25,6 +25,15 @@ export class FileSelect extends React.Component<Props> {
           accept="text/csv"
         />
         <button onClick={this.handleShowReport}>Show Report</button>
+        <br />
+        <p>
+          <a
+            href="https://raw.githubusercontent.com/mikehibm/react-csv-example/master/public/sample_data.csv"
+            target="_blank"
+          >
+            サンプルデータ（右クリックして保存）
+          </a>
+        </p>
       </div>
     );
   }
