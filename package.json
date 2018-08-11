@@ -1,14 +1,18 @@
 {
-  "name": "my-app",
+  "name": "react-csv-example",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://mikehibm.github.io/react-csv-example",
   "dependencies": {
+    "gh-pages": "^1.2.0",
     "moment": "^2.22.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-scripts-ts": "2.17.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
